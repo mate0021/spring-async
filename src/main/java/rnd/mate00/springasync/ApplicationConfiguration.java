@@ -28,6 +28,9 @@ public class ApplicationConfiguration {
     public Executor threadPoolTaskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setThreadNamePrefix("SO-Lookup-");
+        executor.setCorePoolSize(2);
+        executor.setMaxPoolSize(2);
+        executor.initialize();
 
         return executor;
     }
