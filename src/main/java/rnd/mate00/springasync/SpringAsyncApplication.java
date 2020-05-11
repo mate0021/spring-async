@@ -7,13 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableAsync;
 import rnd.mate00.springasync.model.ApiResponse;
 
 import java.util.concurrent.CompletableFuture;
 
 @SpringBootApplication
-@EnableAsync
 public class SpringAsyncApplication implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(SpringAsyncApplication.class);
@@ -39,5 +37,7 @@ public class SpringAsyncApplication implements CommandLineRunner {
         log.info(user2.get().toString());
         log.info(user3.get().toString());
         log.info(user4.get().toString());
+
+        stackOverflowLookupService.voidMethodThrowingException();
     }
 }

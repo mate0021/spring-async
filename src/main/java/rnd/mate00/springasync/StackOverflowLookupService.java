@@ -29,4 +29,9 @@ public class StackOverflowLookupService {
         Thread.sleep(1000);
         return CompletableFuture.completedFuture(result);
     }
+
+    @Async
+    public void voidMethodThrowingException() {
+        throw new RuntimeException("Exception during async call");
+    }
 }
